@@ -8,14 +8,14 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
     <!-- Chosen Palette: Clean & Professional (#FFFFFF, #F8F9FA, #212529, #005F73, #0A9396) -->
     <!-- Application Structure Plan: The SPA is designed as a persuasive marketing funnel for potential clients. It starts with a strong value proposition (Hero), visualizes the client's problem (The Problem) using a comparative chart, presents our unique solution (AI Advantage), details the offerings (Services), simplifies the engagement model (Our Process), and drives action (CTA). This narrative structure guides non-technical users from their pain point to a clear solution, building trust and making the decision to inquire feel logical and low-risk. -->
     <!-- Visualization & Content Choices: 1. Cost & Time Comparison (Data: Traditional vs. AI Agency) -> Goal: Compare -> Viz: Bar Chart (Chart.js) for a stark, immediate comparison of cost and time savings. 2. Core Strengths (Speed, Price, Quality) -> Goal: Inform -> Viz: HTML/CSS Cards with Unicode icons for a clean, scannable presentation of qualitative benefits. 3. Service Plans -> Goal: Organize -> Viz: Three-column card layout (HTML/CSS) for easy comparison of packages. 4. Workflow -> Goal: Organize -> Viz: A numbered, linear flowchart (HTML/CSS) to demystify the production process and emphasize simplicity. All diagrams are HTML/CSS. -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
         body {
-            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            font-family: 'Poppins', 'Noto Sans JP', sans-serif;
         }
         html {
             scroll-behavior: smooth;
@@ -26,12 +26,12 @@
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
-            height: 350px;
-            max-height: 450px;
+            height: 250px;
+            max-height: 350px;
         }
         @media (min-width: 768px) {
             .chart-container {
-                height: 400px;
+                height: 300px;
             }
         }
         .fade-in-section {
@@ -43,6 +43,10 @@
             opacity: 1;
             transform: translateY(0);
         }
+        .nav-link.active {
+            color: #0A9396;
+            font-weight: 700;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -52,10 +56,10 @@
             <div class="flex justify-between items-center h-16">
                 <a href="./index.html" class="font-bold text-xl text-[#005F73]">AI Web Creation</a>
                 <div class="hidden md:flex space-x-8">
-                    <a href="./index.html" class="nav-link text-[#0A9396] font-bold">ホーム</a>
-                    <a href="./services.html" class="nav-link text-gray-600 hover:text-[#005F73]">サービス詳細</a>
-                    <a href="./portfolio.html" class="nav-link text-gray-600 hover:text-[#005F73]">制作実績</a>
-                    <a href="#" class="nav-link text-gray-600 hover:text-[#005F73]">私たちについて (準備中)</a>
+                    <a href="#problem" class="nav-link text-gray-600 hover:text-[#005F73]">私たちの違い</a>
+                    <a href="#solution" class="nav-link text-gray-600 hover:text-[#005F73]">3つの革新</a>
+                    <a href="#pricing" class="nav-link text-gray-600 hover:text-[#005F73]">料金プラン</a>
+                    <a href="#process" class="nav-link text-gray-600 hover:text-[#005F73]">制作の流れ</a>
                 </div>
                 <a href="mailto:gemini.coaching.r04@gmail.com?subject=【無料相談】Webサイト制作について" class="hidden md:block bg-[#005F73] text-white font-bold py-2 px-4 rounded-lg hover:bg-[#0A9396] transition-colors">無料相談</a>
             </div>
@@ -73,8 +77,19 @@
             <div class="bg-white rounded-lg shadow-xl p-6 md:p-8">
                 <h2 class="text-3xl font-bold text-center mb-2 text-[#005F73]">従来のウェブ制作との圧倒的な違い</h2>
                 <p class="text-center text-gray-600 mb-8">一般的なホームページ（5ページ程度）制作にかかる費用と期間を比較。AIの活用で、コストと時間を劇的に圧縮します。</p>
-                <div class="chart-container">
-                    <canvas id="comparisonChart"></canvas>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-center text-gray-700 mb-4">平均制作費用</h3>
+                        <div class="chart-container">
+                            <canvas id="comparisonChartCost"></canvas>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-center text-gray-700 mb-4">平均制作期間</h3>
+                        <div class="chart-container">
+                            <canvas id="comparisonChartTime"></canvas>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -115,7 +130,7 @@
                 <div class="bg-white rounded-lg shadow-lg p-8 flex flex-col border-4 border-[#005F73] relative transform scale-105">
                     <p class="absolute -top-4 left-1-2 -translate-x-1-2 bg-[#005F73] text-white font-bold py-1 px-4 rounded-full">一番人気</p>
                     <h3 class="text-2xl font-bold text-center text-gray-900 mb-4">スタンダードプラン</h3>
-                    <p class="text-4xl font-bold text-center text-[#005F73] mb-4">40,000円〜</p>
+                    <p class="text-4xl font-bold text-center text-[#005F73] mb-4">20,000円〜</p>
                     <p class="text-gray-600 mb-6 flex-grow">企業の顔となる公式サイトを制作。信頼性と機能性を両立させたい事業者様へ。</p>
                      <a href="./services.html#standard-plan" class="mt-auto text-center font-bold text-[#005F73] hover:text-[#0A9396] transition-colors">詳しく見る →</a>
                 </div>
@@ -244,22 +259,16 @@
                 }
             };
 
-            const comparisonCtx = document.getElementById('comparisonChart').getContext('2d');
-            new Chart(comparisonCtx, {
+            const comparisonCostCtx = document.getElementById('comparisonChartCost').getContext('2d');
+            new Chart(comparisonCostCtx, {
                 type: 'bar',
                 data: {
-                    labels: ['平均制作費用', '平均制作期間'],
+                    labels: ['従来型の制作会社', '当社のAI活用プラン'],
                     datasets: [{
-                        label: '従来型の制作会社',
-                        data: [250000, 60],
-                        backgroundColor: '#E9ECEF',
-                        borderColor: '#ADB5BD',
-                        borderWidth: 2
-                    }, {
-                        label: '当社のAI活用プラン',
-                        data: [40000, 14],
-                        backgroundColor: colors.primary,
-                        borderColor: colors.accent,
+                        label: '費用',
+                        data: [250000, 20000],
+                        backgroundColor: ['#E9ECEF', colors.primary],
+                        borderColor: ['#ADB5BD', colors.accent],
                         borderWidth: 2
                     }]
                 },
@@ -271,38 +280,87 @@
                     scales: {
                         x: {
                             beginAtZero: true,
-                            ticks: { 
+                            ticks: {
                                 color: colors.text,
-                                callback: function(value, index, values) {
-                                    if (index === 0) return value.toLocaleString() + ' 円';
+                                callback: function(value) {
+                                    return value.toLocaleString() + ' 円';
+                                }
+                            },
+                            grid: { color: 'rgba(0, 0, 0, 0.05)' }
+                        },
+                        y: {
+                            ticks: { color: colors.text, font: { size: 14 } },
+                            grid: { display: false }
+                        }
+                    },
+                    plugins: {
+                       ...commonTooltipConfig.plugins,
+                       legend: { display: false },
+                       title: { display: false }
+                    }
+                }
+            });
+
+            const comparisonTimeCtx = document.getElementById('comparisonChartTime').getContext('2d');
+            new Chart(comparisonTimeCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['従来型の制作会社', '当社のAI活用プラン'],
+                    datasets: [{
+                        label: '期間',
+                        data: [60, 14],
+                        backgroundColor: ['#E9ECEF', colors.primary],
+                        borderColor: ['#ADB5BD', colors.accent],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    ...commonTooltipConfig,
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            ticks: {
+                                color: colors.text,
+                                callback: function(value) {
                                     return value + ' 日';
                                 }
                             },
                             grid: { color: 'rgba(0, 0, 0, 0.05)' }
                         },
                         y: {
-                            ticks: { color: colors.text, font: { size: 16 } },
+                            ticks: { color: colors.text, font: { size: 14 } },
                             grid: { display: false }
                         }
                     },
                     plugins: {
                        ...commonTooltipConfig.plugins,
-                       title: {
-                           display: false
-                       }
+                       legend: { display: false },
+                       title: { display: false }
                     }
                 }
             });
 
             const sections = document.querySelectorAll('.fade-in-section');
-            
+            const navLinks = document.querySelectorAll('.nav-link');
+
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
+                        
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
                     }
                 });
-            }, { threshold: 0.2 });
+            }, { threshold: 0.4 });
 
             sections.forEach(section => {
                 observer.observe(section);
