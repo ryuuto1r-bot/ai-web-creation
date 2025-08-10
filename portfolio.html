@@ -25,6 +25,9 @@
             background-color: #005F73;
             color: white;
         }
+        #portfolio-modal.visible {
+            display: flex;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -60,11 +63,11 @@
 
         <div id="portfolio-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <div class="portfolio-item bg-white rounded-lg shadow-lg overflow-hidden flex flex-col fade-in-section" data-category="corporate">
-                <img src="https://placehold.co/600x400/0A9396/FFFFFF?text=Cafe+Aroma" alt="カフェサイトのモックアップ" class="w-full h-48 object-cover border-b">
+            <div class="portfolio-item bg-white rounded-lg shadow-lg overflow-hidden flex flex-col fade-in-section cursor-pointer transform hover:scale-105 transition-transform duration-300" data-category="corporate">
+                <img src="https://i.imgur.com/2A2Jz0w.png" alt="カフェサイトのモックアップ" class="w-full h-48 object-cover border-b">
                 <div class="p-6 flex flex-col flex-grow">
-                    <h3 class="text-2xl font-bold mb-2">Cafe Aroma様</h3>
-                    <p class="text-gray-600 mb-4 flex-grow">温かみのあるデザインで、お店のこだわりと雰囲気を伝える公式サイトを制作。AIを活用したブログ記事の提案も行い、集客力の向上に貢献しました。</p>
+                    <h3 class="portfolio-title text-2xl font-bold mb-2">Cafe Aroma様</h3>
+                    <p class="portfolio-description text-gray-600 mb-4 flex-grow">温かみのあるデザインで、お店のこだわりと雰囲気を伝える公式サイトを制作。AIを活用したブログ記事の提案も行い、集客力の向上に貢献しました。</p>
                     <div class="mb-4">
                         <span class="text-sm font-semibold text-white bg-[#005F73] py-1 px-3 rounded-full">スタンダードプラン</span>
                         <span class="text-sm font-semibold text-white bg-[#0A9396] py-1 px-3 rounded-full">AIコンテンツ作成</span>
@@ -73,11 +76,11 @@
                 </div>
             </div>
 
-            <div class="portfolio-item bg-white rounded-lg shadow-lg overflow-hidden flex flex-col fade-in-section" data-category="corporate">
-                <img src="https://placehold.co/600x400/005F73/FFFFFF?text=TechNova+Inc." alt="コーポレートサイトのモックアップ" class="w-full h-48 object-cover border-b">
+            <div class="portfolio-item bg-white rounded-lg shadow-lg overflow-hidden flex flex-col fade-in-section cursor-pointer transform hover:scale-105 transition-transform duration-300" data-category="corporate">
+                <img src="https://i.imgur.com/g0P2gYc.png" alt="コーポレートサイトのモックアップ" class="w-full h-48 object-cover border-b">
                 <div class="p-6 flex flex-col flex-grow">
-                    <h3 class="text-2xl font-bold mb-2">TechNova株式会社様</h3>
-                    <p class="text-gray-600 mb-4 flex-grow">先進性と信頼感を両立させた、IT企業のコーポレートサイトを構築。事業内容を分かりやすく整理し、採用応募にも繋がる構成を提案しました。</p>
+                    <h3 class="portfolio-title text-2xl font-bold mb-2">TechNova株式会社様</h3>
+                    <p class="portfolio-description text-gray-600 mb-4 flex-grow">先進性と信頼感を両立させた、IT企業のコーポレートサイトを構築。事業内容を分かりやすく整理し、採用応募にも繋がる構成を提案しました。</p>
                     <div class="mb-4">
                         <span class="text-sm font-semibold text-white bg-[#005F73] py-1 px-3 rounded-full">スタンダードプラン</span>
                     </div>
@@ -85,11 +88,11 @@
                 </div>
             </div>
 
-            <div class="portfolio-item bg-white rounded-lg shadow-lg overflow-hidden flex flex-col fade-in-section" data-category="ec">
-                <img src="https://placehold.co/600x400/94D2BD/212529?text=Handmade+Komorebi" alt="ECサイトのモックアップ" class="w-full h-48 object-cover border-b">
+            <div class="portfolio-item bg-white rounded-lg shadow-lg overflow-hidden flex flex-col fade-in-section cursor-pointer transform hover:scale-105 transition-transform duration-300" data-category="ec">
+                <img src="https://i.imgur.com/sI3d29y.png" alt="ECサイトのモックアップ" class="w-full h-48 object-cover border-b">
                 <div class="p-6 flex flex-col flex-grow">
-                    <h3 class="text-2xl font-bold mb-2">こもれび雑貨店様</h3>
-                    <p class="text-gray-600 mb-4 flex-grow">ハンドメイド作品の魅力を引き出す、ナチュラルで温かみのあるECサイトを制作。AIで生成した商品説明文の雛形も提供し、店主様の負担を軽減。</p>
+                    <h3 class="portfolio-title text-2xl font-bold mb-2">こもれび雑貨店様</h3>
+                    <p class="portfolio-description text-gray-600 mb-4 flex-grow">ハンドメイド作品の魅力を引き出す、ナチュラルで温かみのあるECサイトを制作。AIで生成した商品説明文の雛形も提供し、店主様の負担を軽減。</p>
                     <div class="mb-4">
                         <span class="text-sm font-semibold text-white bg-[#005F73] py-1 px-3 rounded-full">ECサイト構築</span>
                         <span class="text-sm font-semibold text-white bg-[#0A9396] py-1 px-3 rounded-full">AIコンテンツ作成</span>
@@ -98,11 +101,11 @@
                 </div>
             </div>
             
-            <div class="portfolio-item bg-white rounded-lg shadow-lg overflow-hidden flex flex-col fade-in-section" data-category="corporate">
-                <img src="https://placehold.co/600x400/0A9396/FFFFFF?text=Yoga+Studio+Sun" alt="ヨガスタジオサイトのモックアップ" class="w-full h-48 object-cover border-b">
+            <div class="portfolio-item bg-white rounded-lg shadow-lg overflow-hidden flex flex-col fade-in-section cursor-pointer transform hover:scale-105 transition-transform duration-300" data-category="corporate">
+                <img src="https://i.imgur.com/z6Xy4gH.png" alt="ヨガスタジオサイトのモックアップ" class="w-full h-48 object-cover border-b">
                 <div class="p-6 flex flex-col flex-grow">
-                    <h3 class="text-2xl font-bold mb-2">Yoga Studio Sun様</h3>
-                    <p class="text-gray-600 mb-4 flex-grow">清潔感と癒やしの雰囲気を大切にした、予約機能付きのスタジオ公式サイト。クラスの魅力が伝わるような構成を心がけました。</p>
+                    <h3 class="portfolio-title text-2xl font-bold mb-2">Yoga Studio Sun様</h3>
+                    <p class="portfolio-description text-gray-600 mb-4 flex-grow">清潔感と癒やしの雰囲気を大切にした、予約機能付きのスタジオ公式サイト。クラスの魅力が伝わるような構成を心がけました。</p>
                     <div class="mb-4">
                         <span class="text-sm font-semibold text-white bg-[#005F73] py-1 px-3 rounded-full">スタンダードプラン</span>
                     </div>
@@ -110,11 +113,11 @@
                 </div>
             </div>
 
-            <div class="portfolio-item bg-white rounded-lg shadow-lg overflow-hidden flex flex-col fade-in-section" data-category="lp">
-                <img src="https://placehold.co/600x400/005F73/FFFFFF?text=Summer+Music+Fes" alt="イベントLPのモックアップ" class="w-full h-48 object-cover border-b">
+            <div class="portfolio-item bg-white rounded-lg shadow-lg overflow-hidden flex flex-col fade-in-section cursor-pointer transform hover:scale-105 transition-transform duration-300" data-category="lp">
+                <img src="https://i.imgur.com/Uf1hA0R.png" alt="イベントLPのモックアップ" class="w-full h-48 object-cover border-b">
                 <div class="p-6 flex flex-col flex-grow">
-                    <h3 class="text-2xl font-bold mb-2">夏空音楽祭 2025様</h3>
-                    <p class="text-gray-600 mb-4 flex-grow">イベントの熱気と楽しさを伝える、動きのあるランディングページを制作。AIによるキャッチコピーの大量提案から、最も訴求力の高いものを選定しました。</p>
+                    <h3 class="portfolio-title text-2xl font-bold mb-2">夏空音楽祭 2025様</h3>
+                    <p class="portfolio-description text-gray-600 mb-4 flex-grow">イベントの熱気と楽しさを伝える、動きのあるランディングページを制作。AIによるキャッチコピーの大量提案から、最も訴求力の高いものを選定しました。</p>
                     <div class="mb-4">
                         <span class="text-sm font-semibold text-white bg-[#005F73] py-1 px-3 rounded-full">LP制作プラン</span>
                     </div>
@@ -122,11 +125,11 @@
                 </div>
             </div>
 
-            <div class="portfolio-item bg-white rounded-lg shadow-lg overflow-hidden flex flex-col fade-in-section" data-category="corporate">
-                <img src="https://placehold.co/600x400/94D2BD/212529?text=Miyazaki+Farm" alt="農園サイトのモックアップ" class="w-full h-48 object-cover border-b">
+            <div class="portfolio-item bg-white rounded-lg shadow-lg overflow-hidden flex flex-col fade-in-section cursor-pointer transform hover:scale-105 transition-transform duration-300" data-category="corporate">
+                <img src="https://i.imgur.com/k6k6E2F.png" alt="農園サイトのモックアップ" class="w-full h-48 object-cover border-b">
                 <div class="p-6 flex flex-col flex-grow">
-                    <h3 class="text-2xl font-bold mb-2">宮崎アボカドファーム様</h3>
-                    <p class="text-gray-600 mb-4 flex-grow">商品のこだわりと生産者の想いを伝える、ストーリーテリングを重視したサイトです。AIを活用し、農園の歴史を感動的な物語にまとめました。</p>
+                    <h3 class="portfolio-title text-2xl font-bold mb-2">宮崎アボカドファーム様</h3>
+                    <p class="portfolio-description text-gray-600 mb-4 flex-grow">商品のこだわりと生産者の想いを伝える、ストーリーテリングを重視したサイトです。AIを活用し、農園の歴史を感動的な物語にまとめました。</p>
                     <div class="mb-4">
                         <span class="text-sm font-semibold text-white bg-[#005F73] py-1 px-3 rounded-full">スタンダードプラン</span>
                     </div>
@@ -145,6 +148,18 @@
         </a>
     </footer>
     
+    <!-- Modal -->
+    <div id="portfolio-modal" class="fixed inset-0 bg-black bg-opacity-75 items-center justify-center p-4 z-50 hidden">
+        <div class="bg-white rounded-lg shadow-2xl max-w-3xl w-full relative animate-scale-in">
+            <button id="modal-close-btn" class="absolute -top-3 -right-3 h-10 w-10 bg-white rounded-full text-gray-800 text-3xl flex items-center justify-center shadow-lg leading-none">&times;</button>
+            <div class="p-4">
+                <img id="modal-image" src="" alt="制作実績の拡大画像" class="w-full h-auto max-h-[60vh] object-contain mb-4 rounded-md">
+                <h3 id="modal-title" class="text-2xl font-bold text-gray-900 mb-2"></h3>
+                <p id="modal-description" class="text-gray-600"></p>
+            </div>
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const sections = document.querySelectorAll('.fade-in-section');
@@ -164,12 +179,9 @@
 
             filterContainer.addEventListener('click', (e) => {
                 if (e.target.classList.contains('filter-btn')) {
-                    
                     filterContainer.querySelector('.active').classList.remove('active');
                     e.target.classList.add('active');
-
                     const filterValue = e.target.getAttribute('data-filter');
-
                     portfolioItems.forEach(item => {
                         if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
                             item.style.display = 'flex';
@@ -177,6 +189,41 @@
                             item.style.display = 'none';
                         }
                     });
+                }
+            });
+
+            const portfolioGrid = document.getElementById('portfolio-grid');
+            const modal = document.getElementById('portfolio-modal');
+            const modalCloseBtn = document.getElementById('modal-close-btn');
+            const modalImage = document.getElementById('modal-image');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDescription = document.getElementById('modal-description');
+
+            portfolioGrid.addEventListener('click', (e) => {
+                const clickedItem = e.target.closest('.portfolio-item');
+                if (clickedItem) {
+                    const imgSrc = clickedItem.querySelector('img').src;
+                    const title = clickedItem.querySelector('.portfolio-title').textContent;
+                    const description = clickedItem.querySelector('.portfolio-description').textContent;
+
+                    modalImage.src = imgSrc;
+                    modalTitle.textContent = title;
+                    modalDescription.textContent = description;
+                    
+                    modal.classList.add('visible');
+                    modal.classList.remove('hidden');
+                }
+            });
+
+            const closeModal = () => {
+                modal.classList.add('hidden');
+                modal.classList.remove('visible');
+            };
+
+            modalCloseBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
                 }
             });
         });
