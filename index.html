@@ -56,10 +56,10 @@
             <div class="flex justify-between items-center h-16">
                 <a href="./index.html" class="font-bold text-xl text-[#005F73]">AI Web Creation</a>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#problem" class="nav-link text-gray-600 hover:text-[#005F73]">私たちの違い</a>
-                    <a href="#solution" class="nav-link text-gray-600 hover:text-[#005F73]">3つの革新</a>
-                    <a href="#pricing" class="nav-link text-gray-600 hover:text-[#005F73]">料金プラン</a>
-                    <a href="#process" class="nav-link text-gray-600 hover:text-[#005F73]">制作の流れ</a>
+                    <a href="./index.html" class="nav-link text-[#0A9396] font-bold">ホーム</a>
+                    <a href="./services.html" class="nav-link text-gray-600 hover:text-[#005F73]">サービス詳細</a>
+                    <a href="./portfolio.html" class="nav-link text-gray-600 hover:text-[#005F73]">制作実績</a>
+                    <a href="./about.html" class="nav-link text-gray-600 hover:text-[#005F73]">私たちについて</a>
                 </div>
                 <a href="mailto:gemini.coaching.r04@gmail.com?subject=【無料相談】Webサイト制作について" class="hidden md:block bg-[#005F73] text-white font-bold py-2 px-4 rounded-lg hover:bg-[#0A9396] transition-colors">無料相談</a>
             </div>
@@ -350,17 +350,9 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
-                        
-                        const id = entry.target.getAttribute('id');
-                        navLinks.forEach(link => {
-                            link.classList.remove('active');
-                            if (link.getAttribute('href') === `#${id}`) {
-                                link.classList.add('active');
-                            }
-                        });
                     }
                 });
-            }, { threshold: 0.4 });
+            }, { threshold: 0.2 });
 
             sections.forEach(section => {
                 observer.observe(section);
