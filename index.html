@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI活用型Webサイト制作サービス</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Clean & Professional (#FFFFFF, #F8F9FA, #212529, #005F73, #0A9396) -->
+    <!-- Application Structure Plan: The SPA is designed as a persuasive marketing funnel for potential clients. It starts with a strong value proposition (Hero), visualizes the client's problem (The Problem) using a comparative chart, presents our unique solution (AI Advantage), details the offerings (Services), simplifies the engagement model (Our Process), and drives action (CTA). This narrative structure guides non-technical users from their pain point to a clear solution, building trust and making the decision to inquire feel logical and low-risk. -->
+    <!-- Visualization & Content Choices: 1. Cost & Time Comparison (Data: Traditional vs. AI Agency) -> Goal: Compare -> Viz: Bar Chart (Chart.js) for a stark, immediate comparison of cost and time savings. 2. Core Strengths (Speed, Price, Quality) -> Goal: Inform -> Viz: HTML/CSS Cards with Unicode icons for a clean, scannable presentation of qualitative benefits. 3. Service Plans -> Goal: Organize -> Viz: Three-column card layout (HTML/CSS) for easy comparison of packages. 4. Workflow -> Goal: Organize -> Viz: A numbered, linear flowchart (HTML/CSS) to demystify the production process and emphasize simplicity. All diagrams are HTML/CSS. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 450px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <nav class="sticky top-0 bg-white bg-opacity-80 backdrop-blur-md z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <a href="./index.html" class="font-bold text-xl text-[#005F73]">AI Web Creation</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="./index.html" class="nav-link text-[#0A9396] font-bold">ホーム</a>
+                    <a href="./services.html" class="nav-link text-gray-600 hover:text-[#005F73]">サービス詳細</a>
+                    <a href="./portfolio.html" class="nav-link text-gray-600 hover:text-[#005F73]">制作実績</a>
+                    <a href="#" class="nav-link text-gray-600 hover:text-[#005F73]">私たちについて (準備中)</a>
+                </div>
+                <a href="mailto:gemini.coaching.r04@gmail.com?subject=【無料相談】Webサイト制作について" class="hidden md:block bg-[#005F73] text-white font-bold py-2 px-4 rounded-lg hover:bg-[#0A9396] transition-colors">無料相談</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="text-center py-20 px-6 bg-white">
+        <h1 class="text-4xl md:text-6xl font-black mb-4 text-gray-900">高品質なウェブサイトを、<br class="md:hidden">驚きの速さと価格で。</h1>
+        <p class="max-w-3xl mx-auto text-gray-600 text-lg">AI技術を活用することで、従来の制作費用の<span class="font-bold text-[#005F73] text-xl">50%以下</span>、制作期間<span class="font-bold text-[#005F73] text-xl">70%以上</span>の短縮を実現します。</p>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 md:px-8">
+
+        <section id="problem" class="my-16 py-10 fade-in-section">
+            <div class="bg-white rounded-lg shadow-xl p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-2 text-[#005F73]">従来のウェブ制作との圧倒的な違い</h2>
+                <p class="text-center text-gray-600 mb-8">一般的なホームページ（5ページ程度）制作にかかる費用と期間を比較。AIの活用で、コストと時間を劇的に圧縮します。</p>
+                <div class="chart-container">
+                    <canvas id="comparisonChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution" class="my-16 py-10 fade-in-section">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-center mb-8 text-[#005F73]">AIが可能にする、3つの革新</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg p-8 text-center transform hover:-translate-y-2 transition-transform duration-300 shadow-lg border-t-4 border-[#0A9396]">
+                        <div class="text-6xl mb-4">⚡</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">圧倒的なスピード</h3>
+                        <p class="text-gray-600">企画、文章作成、コーディング。各工程でAIが最適な提案を行うことで、制作時間を劇的に短縮します。</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-8 text-center transform hover:-translate-y-2 transition-transform duration-300 shadow-lg border-t-4 border-[#0A9396]">
+                        <div class="text-6xl mb-4">💰</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">戦略的な価格設定</h3>
+                        <p class="text-gray-600">制作プロセスを効率化することで、人件費を大幅に削減。高品質ながらも、手の届く価格を実現しました。</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-8 text-center transform hover:-translate-y-2 transition-transform duration-300 shadow-lg border-t-4 border-[#0A9396]">
+                        <div class="text-6xl mb-4">✨</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">プロ品質のコンテンツ</h3>
+                        <p class="text-gray-600">AIは単なる道具。最終的な品質は、経験豊富なディレクターが保証。あなたのビジネスの魅力を最大限に引き出します。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="my-16 py-10 fade-in-section">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#005F73]">選べる3つの制作プラン</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-8 flex flex-col hover:shadow-2xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-bold text-center text-gray-900 mb-4">LP制作プラン</h3>
+                    <p class="text-4xl font-bold text-center text-[#005F73] mb-4">15,000円〜</p>
+                    <p class="text-gray-600 mb-6 flex-grow">1枚のページでサービスやイベントをPR。名刺代わりのサイトが欲しい方に最適です。</p>
+                    <a href="./services.html#lp-plan" class="mt-auto text-center font-bold text-[#005F73] hover:text-[#0A9396] transition-colors">詳しく見る →</a>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-8 flex flex-col border-4 border-[#005F73] relative transform scale-105">
+                    <p class="absolute -top-4 left-1-2 -translate-x-1-2 bg-[#005F73] text-white font-bold py-1 px-4 rounded-full">一番人気</p>
+                    <h3 class="text-2xl font-bold text-center text-gray-900 mb-4">スタンダードプラン</h3>
+                    <p class="text-4xl font-bold text-center text-[#005F73] mb-4">40,000円〜</p>
+                    <p class="text-gray-600 mb-6 flex-grow">企業の顔となる公式サイトを制作。信頼性と機能性を両立させたい事業者様へ。</p>
+                     <a href="./services.html#standard-plan" class="mt-auto text-center font-bold text-[#005F73] hover:text-[#0A9396] transition-colors">詳しく見る →</a>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-8 flex flex-col hover:shadow-2xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-bold text-center text-gray-900 mb-4">保守・運用プラン</h3>
+                    <p class="text-4xl font-bold text-center text-[#005F73] mb-4">月額 2,500円〜</p>
+                    <p class="text-gray-600 mb-6 flex-grow">サイト公開後の更新や修正、サーバー管理まで代行。運営に不安がある方も安心です。</p>
+                    <a href="./services.html#maintenance-plan" class="mt-auto text-center font-bold text-[#005F73] hover:text-[#0A9396] transition-colors">詳しく見る →</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="process" class="my-16 py-10 fade-in-section">
+            <h2 class="text-3xl font-bold text-center mb-12 text-[#005F73]">シンプルで透明な制作の流れ</h2>
+            <div class="relative max-w-2xl mx-auto">
+                <div class="absolute left-1/2 top-0 bottom-0 w-1 bg-gray-200 transform -translate-x-1/2"></div>
+                <div class="space-y-16">
+                    <div class="flex items-center w-full">
+                        <div class="w-1/2 flex justify-end">
+                            <div class="bg-white p-6 rounded-lg shadow-lg text-right pr-12 relative w-10/12">
+                                <div class="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-[#005F73] text-white flex items-center justify-center text-2xl font-bold">1</div>
+                                <h3 class="font-bold text-lg text-gray-900">ヒアリング</h3>
+                                <p class="text-gray-600">あなたのビジネスの目標や課題を丁寧に伺います。</p>
+                            </div>
+                        </div>
+                        <div class="w-1/2"></div>
+                    </div>
+                    <div class="flex items-center w-full">
+                        <div class="w-1/2"></div>
+                        <div class="w-1/2 flex justify-start">
+                             <div class="bg-white p-6 rounded-lg shadow-lg text-left pl-12 relative w-10/12">
+                                <div class="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-[#005F73] text-white flex items-center justify-center text-2xl font-bold">2</div>
+                                <h3 class="font-bold text-lg text-gray-900">AIによる構成・デザイン提案</h3>
+                                <p class="text-gray-600">AIが最適なサイト構成とデザイン案を複数提案します。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center w-full">
+                        <div class="w-1/2 flex justify-end">
+                             <div class="bg-white p-6 rounded-lg shadow-lg text-right pr-12 relative w-10/12">
+                                <div class="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-[#005F73] text-white flex items-center justify-center text-2xl font-bold">3</div>
+                                <h3 class="font-bold text-lg text-gray-900">制作・確認</h3>
+                                <p class="text-gray-600">提案を元にスピーディーに制作。いつでも進捗を確認できます。</p>
+                            </div>
+                        </div>
+                        <div class="w-1/2"></div>
+                    </div>
+                    <div class="flex items-center w-full">
+                        <div class="w-1/2"></div>
+                        <div class="w-1/2 flex justify-start">
+                             <div class="bg-white p-6 rounded-lg shadow-lg text-left pl-12 relative w-10/12">
+                                <div class="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-[#005F73] text-white flex items-center justify-center text-2xl font-bold">4</div>
+                                <h3 class="font-bold text-lg text-gray-900">公開・納品</h3>
+                                <p class="text-gray-600">最終確認後、サイトを公開。保守・運用もサポートします。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-20 px-6 mt-16 bg-white border-t">
+        <h2 class="text-3xl font-bold mb-4 text-gray-900">まずは、無料相談から。</h2>
+        <p class="max-w-2xl mx-auto text-gray-600 mb-8">あなたのビジネスの可能性を、ウェブサイトで最大化しませんか？<br>無理な営業は一切いたしません。お気軽にご連絡ください。</p>
+        <a href="mailto:gemini.coaching.r04@gmail.com?subject=【無料相談】Webサイト制作について" class="bg-[#005F73] text-white font-bold py-4 px-10 rounded-full text-xl hover:bg-[#0A9396] transition-opacity shadow-lg inline-block">
+            今すぐ無料で相談する
+        </a>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const wrapLabel = (label, maxWidth) => {
+                if (label.length <= maxWidth) return label;
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                for (const word of words) {
+                    if ((currentLine + ' ' + word).trim().length > maxWidth) {
+                        if (currentLine) lines.push(currentLine.trim());
+                        currentLine = word;
+                    } else {
+                        currentLine = (currentLine + ' ' + word).trim();
+                    }
+                }
+                if (currentLine) lines.push(currentLine.trim());
+                return lines;
+            };
+
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                } else {
+                    return label;
+                }
+            };
+            
+            const colors = {
+                text: '#212529',
+                primary: '#005F73',
+                accent: '#0A9396',
+                highlight: '#94D2BD'
+            };
+
+            const commonTooltipConfig = {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        },
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        titleFont: { size: 16 },
+                        bodyFont: { size: 14 },
+                        padding: 12
+                    },
+                    legend: {
+                        labels: {
+                            color: colors.text,
+                            font: { size: 14 }
+                        }
+                    }
+                }
+            };
+
+            const comparisonCtx = document.getElementById('comparisonChart').getContext('2d');
+            new Chart(comparisonCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['平均制作費用', '平均制作期間'],
+                    datasets: [{
+                        label: '従来型の制作会社',
+                        data: [250000, 60],
+                        backgroundColor: '#E9ECEF',
+                        borderColor: '#ADB5BD',
+                        borderWidth: 2
+                    }, {
+                        label: '当社のAI活用プラン',
+                        data: [40000, 14],
+                        backgroundColor: colors.primary,
+                        borderColor: colors.accent,
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    ...commonTooltipConfig,
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            ticks: { 
+                                color: colors.text,
+                                callback: function(value, index, values) {
+                                    if (index === 0) return value.toLocaleString() + ' 円';
+                                    return value + ' 日';
+                                }
+                            },
+                            grid: { color: 'rgba(0, 0, 0, 0.05)' }
+                        },
+                        y: {
+                            ticks: { color: colors.text, font: { size: 16 } },
+                            grid: { display: false }
+                        }
+                    },
+                    plugins: {
+                       ...commonTooltipConfig.plugins,
+                       title: {
+                           display: false
+                       }
+                    }
+                }
+            });
+
+            const sections = document.querySelectorAll('.fade-in-section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
