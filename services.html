@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サービス詳細 - AI活用型Webサイト制作</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <nav class="sticky top-0 bg-white bg-opacity-80 backdrop-blur-md z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <a href="./index.html" class="font-bold text-xl text-[#005F73]">AI Web Creation</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="./index.html" class="nav-link text-gray-600 hover:text-[#005F73]">ホーム</a>
+                    <a href="./services.html" class="nav-link text-[#0A9396] font-bold">サービス詳細</a>
+                    <a href="./portfolio.html" class="nav-link text-gray-600 hover:text-[#005F73]">制作実績</a>
+                    <a href="#" class="nav-link text-gray-600 hover:text-[#005F73]">私たちについて (準備中)</a>
+                </div>
+                <a href="mailto:gemini.coaching.r04@gmail.com?subject=【無料相談】Webサイト制作について" class="hidden md:block bg-[#005F73] text-white font-bold py-2 px-4 rounded-lg hover:bg-[#0A9396] transition-colors">無料相談</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="text-center py-20 px-6 bg-white border-b">
+        <h1 class="text-4xl md:text-5xl font-black mb-4 text-gray-900">サービス & 料金プラン</h1>
+        <p class="max-w-3xl mx-auto text-gray-600 text-lg">あなたのビジネスに最適なプランをご提案します。</p>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 md:px-8 py-16">
+
+        <!-- LP制作プラン -->
+        <section id="lp-plan" class="mb-20 fade-in-section">
+            <div class="bg-white rounded-lg shadow-xl p-8 md:p-12">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold text-[#005F73] mb-4">LP制作プラン</h2>
+                        <p class="text-gray-600 mb-6">1枚のページで、あなたのサービスや商品の魅力を最大限に伝えるためのプランです。イベント告知や名刺代わりのサイトとして、スピーディーに公開したい方に最適です。</p>
+                        <div class="text-4xl font-bold text-gray-800 mb-6">15,000円〜 <span class="text-lg font-normal">(税別)</span></div>
+                        <a href="mailto:gemini.coaching.r04@gmail.com?subject=【相談】LP制作プランについて" class="bg-[#005F73] text-white font-bold py-3 px-8 rounded-lg hover:bg-[#0A9396] transition-colors inline-block">このプランで無料相談する</a>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h3 class="font-bold text-lg mb-4">こんな方におすすめ</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>✓ とにかく早くサイトが欲しい</li>
+                            <li>✓ 新商品やイベントをPRしたい</li>
+                            <li>✓ まずは低コストで始めたい個人事業主様</li>
+                        </ul>
+                        <h3 class="font-bold text-lg mt-6 mb-4">主なサービス内容</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>✓ 1ページ構成のサイトデザイン・制作</li>
+                            <li>✓ AIによるキャッチコピー・文章作成サポート</li>
+                            <li>✓ お問い合わせフォーム設置</li>
+                            <li>✓ スマートフォン表示対応</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- スタンダードプラン -->
+        <section id="standard-plan" class="mb-20 fade-in-section">
+            <div class="bg-white rounded-lg shadow-xl p-8 md:p-12 border-t-8 border-[#005F73]">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                     <div class="bg-gray-100 p-6 rounded-lg md:order-2">
+                        <h3 class="font-bold text-lg mb-4">こんな方におすすめ</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>✓ 企業の信頼性を高めたい</li>
+                            <li>✓ 複数のサービスや情報を整理して伝えたい</li>
+                            <li>✓ 本格的な公式サイトを持ちたい事業者様</li>
+                        </ul>
+                        <h3 class="font-bold text-lg mt-6 mb-4">主なサービス内容</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>✓ 最大5ページのサイトデザイン・制作</li>
+                            <li>✓ AIによる全ページの文章作成サポート</li>
+                            <li>✓ お知らせ更新システム（ブログ機能）</li>
+                            <li>✓ 基本的なSEO（検索エンジン最適化）対策</li>
+                        </ul>
+                    </div>
+                    <div class="md:order-1">
+                        <p class="text-sm font-bold text-[#005F73]">一番人気</p>
+                        <h2 class="text-3xl font-bold text-[#005F73] mb-4">スタンダードプラン</h2>
+                        <p class="text-gray-600 mb-6">企業の「顔」となる、信頼性と機能性を両立した公式サイトを制作します。サービス紹介や会社概要など、ビジネスに必要なページを網羅します。</p>
+                        <div class="text-4xl font-bold text-gray-800 mb-6">40,000円〜 <span class="text-lg font-normal">(税別)</span></div>
+                        <a href="mailto:gemini.coaching.r04@gmail.com?subject=【相談】スタンダードプランについて" class="bg-[#005F73] text-white font-bold py-3 px-8 rounded-lg hover:bg-[#0A9396] transition-colors inline-block">このプランで無料相談する</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 保守・運用プラン -->
+        <section id="maintenance-plan" class="mb-16 fade-in-section">
+            <div class="bg-white rounded-lg shadow-xl p-8 md:p-12">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold text-[#005F73] mb-4">保守・運用プラン</h2>
+                        <p class="text-gray-600 mb-6">サイトは作って終わりではありません。公開後の情報更新やサーバー管理、技術的なサポートまで、安心してお任せいただける月額制プランです。</p>
+                        <div class="text-4xl font-bold text-gray-800 mb-6">月額 2,500円〜 <span class="text-lg font-normal">(税別)</span></div>
+                        <a href="mailto:gemini.coaching.r04@gmail.com?subject=【相談】保守・運用プランについて" class="bg-[#005F73] text-white font-bold py-3 px-8 rounded-lg hover:bg-[#0A9396] transition-colors inline-block">このプランで無料相談する</a>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h3 class="font-bold text-lg mb-4">こんな方におすすめ</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>✓ サイトの更新方法がわからない</li>
+                            <li>✓ サーバーなどの専門的なことは任せたい</li>
+                            <li>✓ 本業に集中したい事業者様</li>
+                        </ul>
+                        <h3 class="font-bold text-lg mt-6 mb-4">主なサービス内容</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>✓ 月1回程度のテキスト・画像更新</li>
+                            <li>✓ サーバー・ドメインの契約管理代行</li>
+                            <li>✓ 定期的なバックアップ</li>
+                            <li>✓ 操作方法に関するご質問対応</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-20 px-6 bg-white border-t">
+        <h2 class="text-3xl font-bold mb-4 text-gray-900">まずは、無料相談から。</h2>
+        <p class="max-w-2xl mx-auto text-gray-600 mb-8">あなたのビジネスの可能性を、ウェブサイトで最大化しませんか？<br>無理な営業は一切いたしません。お気軽にご連絡ください。</p>
+        <a href="mailto:gemini.coaching.r04@gmail.com?subject=【無料相談】Webサイト制作について" class="bg-[#005F73] text-white font-bold py-4 px-10 rounded-full text-xl hover:bg-[#0A9396] transition-opacity shadow-lg inline-block">
+            今すぐ無料で相談する
+        </a>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
